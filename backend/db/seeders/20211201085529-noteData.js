@@ -20,7 +20,7 @@ module.exports = {
             title: "Bills to pay",
             content: "Phone , Credit-Cards, Insurance",
             createdAt: new Date("Fri, 12 November 2021 11:52:00"),
-            updatedAt: new Date("Fri, 12 November 2021 11:52:00"),
+            updatedAt: new Date("Fri, 12 November 2021 11:52:00"), 
           },
           {
             userId: 1,
