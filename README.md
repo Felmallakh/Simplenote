@@ -1,4 +1,4 @@
-## Intro
+## Intro 
 
 Welcome to SimpleNotes, a clone of Evernote with CRUD operations to keep track of all your notes.
 
