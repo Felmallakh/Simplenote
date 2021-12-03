@@ -4,7 +4,7 @@ Welcome to SimpleNotes, a clone of Evernote with CRUD operations to keep track o
 
 ## Live Site
 
-https://simplenotes.herokuapp.com/
+https://simplenotes2021.herokuapp.com/
 
 ## Features
 
