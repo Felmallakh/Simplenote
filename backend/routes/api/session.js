@@ -28,10 +28,21 @@ router.post(
   })
 );
 
-// Log out route to remove the token cookie from response and return JSON success message
+// Log out route to remove the TOKEN cookie from response and return JSON success message
 router.delete("/", (_req, res) => {
   res.clearCookie("token");
   return res.json({ message: "success" });
 });
+
+// Restore session user
+router.get('/', restoreUser, (req, res) => {
+    const { user } = req;
+
+    if (user){
+      return res.json({ user: user.toSafeObject() });
+    }
+    else return res.json({});
+  }
+);
 
 module.exports = router;
