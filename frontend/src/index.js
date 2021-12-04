@@ -12,13 +12,11 @@ import * as sessionActions from './store/session';
 
 const store = configureStore();
 
-// attach the custom csrfFetch function
 if (process.env.NODE_ENV !== "production") {
   restoreCSRF();
 
   window.csrfFetch = csrfFetch;
   window.store = store;
-  window.sessionActions = sessionActions;
 }
 
 function Root() {
