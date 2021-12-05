@@ -1,0 +1,21 @@
+ul {
+  list-style-type: none;
+  background-color: #02475e;
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #f3bda1;
+  padding: 8px;
+  margin: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-link:hover {
+  box-shadow: 0 0 2pt 2pt #687980;
+  border-radius: 5px;
+}
+
