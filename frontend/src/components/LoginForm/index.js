@@ -59,18 +59,29 @@ function LoginForm() {
           <button className="submit_button" type="submit">
             Sign In
           </button>
+          <button
+            className="submit_button"
+            onClick={() => {
+              setCredential("Demo");
+              setPassword("password");
+            }}
+          >
+            Demo User
+          </button>
+        </div>
+        <div className="sub-cancel-buttons">
           <span className="cancel-button">
             <Link className="redirect-link" to="/">
               Cancel
             </Link>
           </span>
-          </div>
-          <label>
-            Don't have an account? Signup{" "}
-            <Link className="redirect-link" to="/signup">
-              here
-            </Link>
-          </label>
+        </div>
+        <label>
+          Don't have an account? Signup{" "}
+          <Link className="redirect-link" to="/signup">
+            here
+          </Link>
+        </label>
       </form>
     </div>
   );

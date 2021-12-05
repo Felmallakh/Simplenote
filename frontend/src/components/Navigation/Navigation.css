@@ -19,3 +19,26 @@ ul {
   border-radius: 5px;
 }
 
+
+.submit-button{
+  color: #35444b;
+  background-color: #bb8c75;
+  align-items: left;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top:10px;
+  height: 2.25em;
+  width: 12%;
+  /* box-shadow: 0 0 2px #687980; */
+}
+
+.submit_button:hover {
+    box-shadow: 0 0 2pt 2pt #687980;
+    border-radius: 5px;
+}
+
+li {
+  color: #bb8c80;
+}
+
+

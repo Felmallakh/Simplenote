@@ -42,22 +42,22 @@ function SignupForm() {
         </ul>
         <div className="sign-up-form">
           <div className="form-inputs">
-            <label>Email</label>
-            <input
-              type="text"
-              placeholder="Email Address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-inputs">
             <label>Username</label>
             <input
               type="text"
               value={username}
               placeholder="Username"
               onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-inputs">
+            <label>Email</label>
+            <input
+              type="text"
+              placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>

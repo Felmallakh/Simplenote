@@ -11,10 +11,10 @@ function Navigation({ isLoaded }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
-    const demoLogin = async () => {
-      await dispatch(loginUser("Demo", "password"));
-      history.push("/home");
-    };
+    // const demoLogin = async () => {
+    //   await dispatch(loginUser("Demo", "password"));
+    //   history.push("/home");
+    // };
 
   let sessionLinks;
 
@@ -25,7 +25,7 @@ function Navigation({ isLoaded }) {
       <>
         <NavLink className="nav-link" to="/login">Log In</NavLink>
         <NavLink className="nav-link" to="/signup">Sign Up</NavLink>
-        <span className="nav-link" onClick={demoLogin}>Demo</span>
+        {/* <span className="nav-link" onClick={demoLogin}>Demo</span> */}
       </>
     );
   }
