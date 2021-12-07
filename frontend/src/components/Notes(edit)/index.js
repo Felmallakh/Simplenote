@@ -18,10 +18,11 @@ const EditNote = () => {
       dispatch(getNotes());
     } else {
       setTitle(notes.title);
-      setContent(notes.description);
+      setContent(notes.content);
     }
   }, [dispatch, notes, notebookId, title]);
 
+  const updateTitle = (e) => setTitle(e.target.value);
   const updateContent = (e) => setContent(e.target.value);
 
   if (!sessionUser) return <Redirect to="/login" />;
@@ -46,10 +47,15 @@ const EditNote = () => {
     <>
       <h2 className="edit-notebook-header">Edit Note</h2>
       <form onSubmit={onSubmit} className="add-notebook-form">
-        Notebook Title :
-        <span />
-        {title}
-        <br />
+        Note Title :
+        <input
+          onChange={updateTitle}
+          name="content"
+          type="text"
+          placeholder="untitled note"
+          value={title}
+        />
+        <br/>
         Content:
         <input
           onChange={updateContent}
