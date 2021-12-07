@@ -29,6 +29,8 @@ function NotesList() {
           <NavLink to={`/notes/${id}`} key={id}>
             <div>{title}</div>
             <div>{content}</div>
+            <NavLink to={`/edit-note/${id}`}>Edit</NavLink>
+            <button onClick={() => handleDelete(id)}>Delete</button>
           </NavLink>
         ))}
       </div>
