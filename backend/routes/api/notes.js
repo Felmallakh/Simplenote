@@ -6,6 +6,13 @@ const { handleValidationErrors } = require("../../utils/validation");
 const { restoreUser } = require("../../utils/auth");
 const { Note } = require("../../db/models");
 
+const noteError = (message) => {
+  const err = new Error(message);
+  err.status = 401;
+  err.title = "Failed to fetch notebook";
+  err.errors = [message];
+  return err;
+};
 
 const noteValidator = [
   check("title")
