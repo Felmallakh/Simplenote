@@ -27,7 +27,11 @@ function NotebooksList() {
       <div className="notebook-list">
         {Object.values(notebooks).map(({ id, title }) => (
           <NavLink to={`/notebooks/${id}`} key={id}>
-            <div>{title}</div>
+           <div>{title}</div>
+            {/* <div>
+              <NavLink to={`/notes/${id}`}>{title}</NavLink>
+            </div> */}
+
             <NavLink to={`/edit-notebook/${id}`}>
               <button className="submit-button">Edit</button>
             </NavLink>
