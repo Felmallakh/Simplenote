@@ -31,7 +31,7 @@ const EditNotebook = () => {
 
   return (
     <>
-      <h2 className="edit-notebook-header">Edit Notebook</h2>
+      <h2 className="headers">Edit Notebook</h2>
       <form onSubmit={onSubmit} className="add-notebook-form">
         Title:{" "}
         <input

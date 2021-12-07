@@ -45,7 +45,7 @@ const EditNote = () => {
 
   return (
     <>
-      <h2 className="edit-notebook-header">Edit Note</h2>
+      <h2 className="headers">Edit Note</h2>
       <form onSubmit={onSubmit} className="add-notebook-form">
         Note Title :
         <input

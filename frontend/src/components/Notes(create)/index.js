@@ -1,46 +1,51 @@
-import React from "react";
-import { useEffect } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink, Redirect } from "react-router-dom";
-import { getNotes, deleteNote } from "../../store/notes";
+import { useHistory, Redirect } from "react-router-dom";
+import { addNote } from "../../store/notes";
 
-function NotesList() {
-  const notes = useSelector((state) => state.notes);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getNotes());
-  }, [dispatch]);
-
-  const handleDelete = (id) => {
-    dispatch(deleteNote(id));
-  };
-
+const CreateNote = () => {
   const sessionUser = useSelector((state) => state.session.user);
-  if (!sessionUser) {
-    return <Redirect to="/" />;
-  }
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+
+  if (!sessionUser) return <Redirect to="/login" />;
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    const note = await dispatch(addNote(title, content));
+
+    if (note) return history.push("/notes");
+  };
 
   return (
     <>
-      <h2 className="notes_title">Notes</h2>
-      <div className="notes-list">
-        {Object.values(notes).map(({ id, title, content }) => (
-          <NavLink to={`/notes/${id}`} key={id}>
-            <div>{title}</div>
-            <div>{content}</div>
-            <NavLink to={`/edit-note/${id}`}>
-              <button className="submit-button">Edit</button>
-            </NavLink>
-            <button className="submit-button" onClick={() => handleDelete(id)}>
-              Delete
-            </button>
-          </NavLink>
-        ))}
-        <NavLink to="/new-note">Add a Note</NavLink>
-      </div>
+      <h2 className="headers"> Create Note </h2>
+      <form className="add-form" onSubmit={onSubmit}>
+        <div className="inputs">
+          Title: <input
+          name="title"
+          placeholder="untitled note"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          required
+        />
+        <br />
+        <br />
+        <br />
+        Content: <textarea name="content" placeholder="Note content goes here"
+        value={content} onchange={(e) => setContent(e.target.value)} required />
+        </div>
+        <div>
+          <button className="submit-button" type="submit">
+            Add Notebook
+          </button>
+        </div>
+      </form>
     </>
   );
-}
+};
 
-export default NotesList;
+export default CreateNote;

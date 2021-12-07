@@ -30,14 +30,16 @@ function NotesList() {
             <div>{title}</div>
             <div>{content}</div>
             <NavLink to={`/edit-note/${id}`}>
-              <button className="submit-button">Edit
-              </button></NavLink>
+              <button className="submit-button">Edit</button>
+            </NavLink>
             <button className="submit-button" onClick={() => handleDelete(id)}>
               Delete
             </button>
           </NavLink>
         ))}
-        <NavLink to="/new-note">Add a Note</NavLink>
+        <div>
+          <NavLink to="/new-note">Add a Note</NavLink>
+        </div>
       </div>
     </>
   );

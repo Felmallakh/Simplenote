@@ -10,6 +10,7 @@ import NotebooksList from "./components/Notebooks"
 import EditNotebook from "./components/Notebooks(edit)"
 import EditNote from "./components/Notes(edit)"
 import CreateNotebook from "./components/Notebooks(create)";
+import CreateNote from "./components/Notes(create)";
 
 function App() {
   const dispatch = useDispatch();
@@ -44,8 +45,8 @@ function App() {
           <Route path="/edit-note/:notebookId">
             <EditNote />
           </Route>
-          <Route path="/new-notes">
-            <NotesList />
+          <Route path="/new-note">
+            <CreateNote />
           </Route>
         </Switch>
       )}

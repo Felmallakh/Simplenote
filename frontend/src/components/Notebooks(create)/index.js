@@ -21,8 +21,8 @@ const CreateNotebook = () => {
 
   return (
     <>
-    <h2 className="edit-notebook-header"> Create Notebook </h2>
-    <form className="add-notebook-form" onSubmit={onSubmit}>
+    <h2 className="headers"> Create Notebook </h2>
+    <form className="add-form" onSubmit={onSubmit}>
         <input name="title" placeholder="untitled notebook" value={title} onChange={e => setTitle(e.target.value)} />
       <div>
         <button className="submit-button" type="submit">Add Notebook</button>
