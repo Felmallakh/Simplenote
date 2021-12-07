@@ -60,7 +60,7 @@ router.get("/:id(\\d+)", restoreUser, asyncHandler(async (req, res, next) => {
 router.post('/', restoreUser, notebookValidator, asyncHandler(async (req, res, next) => {
     const { user } = req;
     const { title } = req.body;
-    const userId = res.locals.user.id;
+    const userId = user.dataValues.id;
     if (user) {
         const newNotebook = await Notebook.create({ userId, title })
         return res.json(newNotebook);
@@ -73,7 +73,7 @@ router.put("/:id(\\d+)", restoreUser, notebookValidator, asyncHandler(async (req
     const { user } = req;
     const { title } = req.body;
     const notebookId = req.params.id;
-    const userId = res.locals.user.id;
+    const userId = user.dataValues.id;
 
     if (user){
         const notebookUpdate = await Notebook.findByPk(notebookId);
@@ -88,7 +88,7 @@ router.put("/:id(\\d+)", restoreUser, notebookValidator, asyncHandler(async (req
 //Delete Notebook
 router.delete("/:id(\\d+)", async (req, res, next) => {
     const { user } = req;
-    const userId = res.locals.user.id;
+    const userId = user.dataValues.id;
     const notebookId = req.params.id;
 
     if (user){
