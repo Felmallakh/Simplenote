@@ -97,7 +97,10 @@ const notebookReducer = (state = initialState, action) => {
       return { ...state, [action.payload.id]: action.payload };
 
     case REMOVE_NOTEBOOK:
-      return { ...state, [action.payload.id]: action.payload };
+        const newState = { ...state };
+        delete newState[action.payload]
+        return newState;
+    //   return { ...state, [action.payload.id]: action.payload };
 
     default:
       return state;

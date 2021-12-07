@@ -37,7 +37,7 @@ function NotebooksList() {
           </NavLink>
         ))}
         <div>
-          <NavLink to="/new-notebook">Add a Notebook</NavLink>
+          <NavLink to="/new-notebook">Add Notebook</NavLink>
         </div>
       </div>
     </>

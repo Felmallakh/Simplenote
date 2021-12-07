@@ -9,6 +9,7 @@ import NotesList from "./components/Notes"
 import NotebooksList from "./components/Notebooks"
 import EditNotebook from "./components/Notebooks(edit)"
 import EditNote from "./components/Notes(edit)"
+import CreateNotebook from "./components/Notebooks(create)";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ function App() {
             <EditNotebook />
           </Route>
           <Route path="/new-notebook">
-            <NotebooksList />
+            <CreateNotebook />
           </Route>
           <Route path="/notes">
             <NotesList />
