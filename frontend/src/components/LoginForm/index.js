@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Redirect, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
-import { getNotes } from "../../store/notes";
-import { getAllNotebook, deleteNotebook } from "../../store/notebooks";
-
-
 import "./LoginForm.css";
 
 function LoginForm() {
@@ -14,48 +10,8 @@ function LoginForm() {
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  const notebooks = useSelector((state) => state.notebooks);
 
-   useEffect(() => {
-     dispatch(getAllNotebook());
-   }, [dispatch]);
-
-   const handleDelete = (id) => {
-     dispatch(deleteNotebook(id));
-     // window.location.reload();
-   };
-
-  if (sessionUser) {
-    return (
-      <>
-        <h2 className="notebook_title">Notebooks</h2>
-        <div className="notebook-list">
-          {notebooks &&
-            Object.values(notebooks).map(({ id, title }) => (
-              <NavLink
-                className="notebooks-links"
-                to={`/notebooks/${id}`}
-                key={id}
-              >
-                {title}
-                <NavLink to={`/edit-notebook/${id}`} className="edit-form-link">
-                  Edit
-                </NavLink>
-                <button
-                  onClick={() => handleDelete(id)}
-                  className="delete-button"
-                >
-                  Delete
-                </button>
-              </NavLink>
-            ))}
-          <NavLink to="/new-notebook" className="add-notebook">
-            Add a Notebook
-          </NavLink>
-        </div>
-      </>
-    );
-  }
+  if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
