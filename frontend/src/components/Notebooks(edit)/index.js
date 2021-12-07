@@ -7,7 +7,6 @@ const EditNotebook = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const { notebookId } = useParams();
   const [title, setTitle] = useState("");
-  const [errors, setErrors] = useState([]);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -29,7 +28,7 @@ const EditNotebook = () => {
     <>
       <h2 className="edit-notebook-header">Edit Notebook</h2>
       <form onSubmit={onSubmit} className="add-notebook-form">
-        <input
+        Title: <input
           onChange={updateTitle}
           name="title"
           type="text"

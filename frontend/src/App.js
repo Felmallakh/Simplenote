@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import NotesList from "./components/Notes"
 import NotebooksList from "./components/Notebooks"
 import EditNotebook from "./components/Notebooks(edit)"
+import EditNote from "./components//Notes(edit)"
 
 function App() {
   const dispatch = useDispatch();
@@ -39,8 +40,8 @@ function App() {
           <Route path="/notes">
             <NotesList />
           </Route>
-          <Route path="/edit-notes">
-            <NotesList />
+          <Route path="/edit-note/:notebookId">
+            <EditNote />
           </Route>
           <Route path="/new-notes">
             <NotesList />
