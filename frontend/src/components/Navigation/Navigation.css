@@ -6,6 +6,21 @@ ul {
   border-radius: 10px;
 }
 
+#profile-icon {
+    font-size: 30px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1360px;
+
+}
+
 .nav-link {
   text-decoration: none;
   color: #f3bda1;
@@ -29,10 +44,12 @@ ul {
   margin-top:10px;
   height: 2.25em;
   width: 12%;
-  /* box-shadow: 0 0 2px #687980; */
+  width: fit-content;
+  box-shadow: 0 0 2px #687980;
 }
 
-.submit_button:hover {
+
+.submit-button:hover {
     box-shadow: 0 0 2pt 2pt #687980;
     border-radius: 5px;
 }
