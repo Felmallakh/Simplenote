@@ -29,10 +29,10 @@ router.get(
   restoreUser,
   asyncHandler(async (req, res, next) => {
     const { user } = req;
-    const userId = res.locals.user.id;
+    const userId = user.dataValues.id;
     if (user) {
       const notes = await Note.findAll({
-        where: { userId },
+        // where: { userId },
         order: [["updatedAt", "DESC"]],
       });
       return res.json(notes);
@@ -64,9 +64,9 @@ router.post(
   asyncHandler(async (req, res, next) => {
     const { user } = req;
     const { notebookId, title, content } = req.body;
-    const userId = res.locals.user.id;
+    const userId = user.dataValues.id;
     if (user) {
-      const newNote = await Note.build({ userId, notebookId, title, content });
+      const newNote = await Note.create({ userId, notebookId, title, content });
       return res.json(newNote);
     }
     return next(noteError("User must be logged in to create a notebook"));
@@ -82,7 +82,7 @@ router.put(
     const { user } = req;
     const { notebookId, title, content } = req.body;
     const noteId = req.params.id;
-    const userId = res.locals.user.id;
+    const userId = user.dataValues.id;
 
     if (user) {
       const noteUpdate = await Note.findByPk(noteId);
@@ -97,7 +97,6 @@ router.put(
 //Delete Note
 router.delete("/:id(\\d+)", async (req, res, next) => {
   const { user } = req;
-  const userId = res.locals.user.id;
   const noteId = req.params.id;
 
   if (user) {

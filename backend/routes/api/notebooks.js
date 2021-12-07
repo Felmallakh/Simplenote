@@ -32,11 +32,13 @@ const notebookValidator = [
 //Get All Notebooks
 router.get("/", restoreUser, asyncHandler(async (req, res, next) =>{
     const { user } = req;
-    const userId = res.locals.user.id;
+    console.log("xxxxx", user)
+    const userId = user.id;
     if (user) {
         const notebooks = await Notebook.findAll({
             where: { userId },
             order: [["updatedAt", "DESC"]] })
+            console.log("noteeee" , notebooks)
         return res.json(notebooks);
     }
     return next(notebookError("User must be logged in to view notebooks"))
@@ -60,7 +62,7 @@ router.post('/', restoreUser, notebookValidator, asyncHandler(async (req, res, n
     const { title } = req.body;
     const userId = res.locals.user.id;
     if (user) {
-        const newNotebook = await Notebook.build({ userId, title })
+        const newNotebook = await Notebook.create({ userId, title })
         return res.json(newNotebook);
     }
     return next(notebookError("User must be logged in to create a notebook"));
