@@ -20,7 +20,7 @@ const EditNote = () => {
       setTitle(notes.title);
       setContent(notes.content);
     }
-  }, [dispatch, notes, notebookId, title]);
+  }, [dispatch, notes, notebookId]);
 
   const updateTitle = (e) => setTitle(e.target.value);
   const updateContent = (e) => setContent(e.target.value);
