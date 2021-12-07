@@ -6,6 +6,7 @@ ul {
   border-radius: 10px;
 }
 
+
 #profile-icon {
     font-size: 30px;
     position: relative;
@@ -17,8 +18,10 @@ ul {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-left: 1360px;
+}
 
+.profile-dropdown li{
+  text-align: right;
 }
 
 .nav-link {
@@ -47,6 +50,7 @@ ul {
   width: fit-content;
   box-shadow: 0 0 2px #687980;
 }
+
 
 
 .submit-button:hover {
