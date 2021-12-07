@@ -33,6 +33,7 @@ function NotesList() {
             <button onClick={() => handleDelete(id)}>Delete</button>
           </NavLink>
         ))}
+        <NavLink to="/new-note">Add a Note</NavLink>
       </div>
     </>
   );
