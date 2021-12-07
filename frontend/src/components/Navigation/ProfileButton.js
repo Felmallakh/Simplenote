@@ -35,7 +35,7 @@ function ProfileButton({ user }) {
     <>
     <NavLink className="nav-link" to="/notes">Notes</NavLink>
       <button className="profile-button" onClick={openMenu}>
-        {/* <i className="fas fa-user-circle" /> */}👨‍🏫
+        <i className="fas fa-user-circle" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
