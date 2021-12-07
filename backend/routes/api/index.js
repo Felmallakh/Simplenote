@@ -1,25 +1,20 @@
 const router = require('express').Router();
-const asyncHandler = require('express-async-handler');
-const { setTokenCookie, restoreUser, requireAuth } = require("../../utils/auth");
 const sessionRouter = require('./session');
 const usersRouter = require('./users');
 const notebookRouter = require("./notebooks");
-const { User } = require('../../db/models');
+const notesRouter = require("./notes");
 
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
 router.use('/notebooks', notebookRouter)
-
-router.post('/test', function(req, res) {
-    res.json({ requestBody: req.body });
-});
-
-
-
+router.use('/notes', notesRouter);
 
 
 module.exports = router;
 
+// router.post('/test', function(req, res) {
+//     res.json({ requestBody: req.body });
+// });
 
 // testing token cookie ... check cookie created in DevTools
 // router.get('/set-token-cookie', asyncHandler(async (_req, res) => {
