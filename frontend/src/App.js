@@ -45,7 +45,7 @@ function App() {
           <Route path="/edit-note/:notebookId">
             <EditNote />
           </Route>
-          <Route path="/new-note">
+          <Route path="/:notebookId/new-note">
             <CreateNote />
           </Route>
         </Switch>
