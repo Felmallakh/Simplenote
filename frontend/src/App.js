@@ -7,7 +7,7 @@ import SignupForm from "./components/SignupForm";
 import Navigation from "./components/Navigation";
 import NotesList from "./components/Notes"
 import NotebooksList from "./components/Notebooks"
-
+import EditNotebook from "./components/Notebooks(edit)"
 
 function App() {
   const dispatch = useDispatch();
@@ -30,8 +30,8 @@ function App() {
           <Route path="/notebooks">
             <NotebooksList />
           </Route>
-          <Route path="/edit-notebooks">
-            <NotebooksList />
+          <Route path="/edit-notebook/:notebookId">
+            <EditNotebook />
           </Route>
           <Route path="/new-notebook">
             <NotebooksList />
