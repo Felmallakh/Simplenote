@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getNotes, removeNote } from "../../store/notes";
 import { NavLink, Redirect } from "react-router-dom";
+import { getNotes, deleteNote } from "../../store/notes";
 
 function NotesList() {
   const notes = useSelector((state) => state.notes);
@@ -13,7 +13,7 @@ function NotesList() {
   }, [dispatch]);
 
   const handleDelete = (id) => {
-    dispatch(removeNote(id));
+    dispatch(deleteNote(id));
   };
 
   const sessionUser = useSelector((state) => state.session.user);

@@ -76,7 +76,7 @@ export const editNote = (noteId, title, content) => async (dispatch) => {
 };
 
 //Delete Note
-export const removeNote = (id) => async (dispatch) => {
+export const deleteNote = (id) => async (dispatch) => {
   const response = await csrfFetch(`/api/notes/${id}`, { method: "DELETE" });
 
   if (response.ok) dispatch(remove(id));

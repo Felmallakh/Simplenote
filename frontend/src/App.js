@@ -6,6 +6,8 @@ import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import Navigation from "./components/Navigation";
 import NotesList from "./components/Notes"
+import NotebooksList from "./components/Notebooks"
+
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +26,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupForm />
+          </Route>
+          <Route path="/notebooks">
+            <NotebooksList />
           </Route>
           <Route path="/notes">
             <NotesList />
