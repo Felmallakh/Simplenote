@@ -57,7 +57,8 @@ const EditNote = () => {
         />
         <br/>
         Content:
-        <input
+        <br/>
+        <textarea
           onChange={updateContent}
           name="content"
           type="text"

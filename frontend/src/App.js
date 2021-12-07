@@ -8,7 +8,7 @@ import Navigation from "./components/Navigation";
 import NotesList from "./components/Notes"
 import NotebooksList from "./components/Notebooks"
 import EditNotebook from "./components/Notebooks(edit)"
-import EditNote from "./components//Notes(edit)"
+import EditNote from "./components/Notes(edit)"
 
 function App() {
   const dispatch = useDispatch();
