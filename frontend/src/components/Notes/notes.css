@@ -1,6 +1,6 @@
 .notes_title{
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(58, 24, 50);

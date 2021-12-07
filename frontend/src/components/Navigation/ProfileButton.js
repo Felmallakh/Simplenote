@@ -32,17 +32,22 @@ function ProfileButton({ user }) {
 
   return (
     <>
+      <NavLink className="nav-link" to="/notebooks">
+        Notebooks
+      </NavLink>
       <NavLink className="nav-link" to="/notes">
         Notes
       </NavLink>
-        <i id="profile-icon" onClick={openMenu} class="fas fa-user-circle"></i>
+      <i id="profile-icon" onClick={openMenu} class="fas fa-user-circle"></i>
       {showMenu && (
         <ul className="profile-dropdown">
           <li>{user.username}</li>
           <li>{user.email}</li>
-          <li><button className="submit-button" onClick={logout}>
-            Log Out
-          </button></li>
+          <li>
+            <button className="submit-button" onClick={logout}>
+              Log Out
+            </button>
+          </li>
         </ul>
       )}
     </>

@@ -37,7 +37,6 @@ ul {
   border-radius: 5px;
 }
 
-
 .submit-button{
   color: #35444b;
   background-color: #bb8c75;
@@ -50,8 +49,6 @@ ul {
   width: fit-content;
   box-shadow: 0 0 2px #687980;
 }
-
-
 
 .submit-button:hover {
     box-shadow: 0 0 2pt 2pt #687980;
