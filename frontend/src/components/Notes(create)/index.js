@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
 import { addNote } from "../../store/notes";
 
+
 const CreateNote = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const CreateNote = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  if (!sessionUser) return <Redirect to="/login" />;
+  if (!sessionUser) return <Redirect to="/" />;
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -25,18 +26,24 @@ const CreateNote = () => {
       <h2 className="headers"> Create Note </h2>
       <form className="add-form" onSubmit={onSubmit}>
         <div className="inputs">
-          Title: <input
-          name="title"
-          placeholder="untitled note"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
-        />
-        <br />
-        <br />
-        <br />
-        Content: <textarea name="content" placeholder="Note content goes here"
-        value={content} onchange={(e) => setContent(e.target.value)} required />
+          Title:
+          <input
+            name="title"
+            placeholder="untitled note"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+          <br />
+          <br />
+          <br />
+          Content:{" "}
+          <textarea
+            name="content"
+            placeholder="Note content goes here"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
         </div>
         <div>
           <button className="submit-button" type="submit">
