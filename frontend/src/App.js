@@ -30,7 +30,19 @@ function App() {
           <Route path="/notebooks">
             <NotebooksList />
           </Route>
+          <Route path="/edit-notebooks">
+            <NotebooksList />
+          </Route>
+          <Route path="/new-notebook">
+            <NotebooksList />
+          </Route>
           <Route path="/notes">
+            <NotesList />
+          </Route>
+          <Route path="/edit-notes">
+            <NotesList />
+          </Route>
+          <Route path="/new-notes">
             <NotesList />
           </Route>
         </Switch>
