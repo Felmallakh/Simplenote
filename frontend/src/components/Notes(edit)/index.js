@@ -4,26 +4,25 @@ import { useHistory, Redirect, useParams } from "react-router-dom";
 import { editNote, getNotes } from "../../store/notes";
 
 const EditNote = () => {
-    const { notebookId } = useParams();
-    const notes = useSelector((state) => state.notes[notebookId])
-    const sessionUser = useSelector((state) => state.session.user);
+  const { notebookId } = useParams();
+  const notes = useSelector((state) => state.notes[notebookId]);
+  const sessionUser = useSelector((state) => state.session.user);
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("")
+  const [content, setContent] = useState("");
 
   const dispatch = useDispatch();
   const history = useHistory();
 
-    useEffect(() => {
-      if (!notes) {
-        dispatch(getNotes());
-      } else {
-        setTitle(notes.title);
-        setContent(notes.description);
-      }
-    }, [dispatch, notes, notebookId, title]);
+  useEffect(() => {
+    if (!notes) {
+      dispatch(getNotes());
+    } else {
+      setTitle(notes.title);
+      setContent(notes.description);
+    }
+  }, [dispatch, notes, notebookId, title]);
 
-
-    const updateContent = (e) => setContent(e.target.value);
+  const updateContent = (e) => setContent(e.target.value);
 
   if (!sessionUser) return <Redirect to="/login" />;
 
@@ -37,12 +36,19 @@ const EditNote = () => {
     }
   };
 
+  const handleCancelClick = (e) => {
+    e.preventDefault();
+    return history.push("/notes");
+  };
+
+
   return (
     <>
       <h2 className="edit-notebook-header">Edit Note</h2>
       <form onSubmit={onSubmit} className="add-notebook-form">
         Notebook Title :
-        <span />{title}
+        <span />
+        {title}
         <br />
         Content:
         <input
@@ -54,6 +60,13 @@ const EditNote = () => {
         />
         <button className="submit-button" type="submit">
           Edit Note
+        </button>
+        <button
+          className="submit-button"
+          type="button"
+          onClick={handleCancelClick}
+        >
+          Cancel
         </button>
       </form>
     </>

@@ -26,8 +26,7 @@ const EditNotebook = () => {
 
   const handleCancelClick = (e) => {
     e.preventDefault();
-          return history.push("/notebooks");
-
+    return history.push("/notebooks");
   };
 
   return (
