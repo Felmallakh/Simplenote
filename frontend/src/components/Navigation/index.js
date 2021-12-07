@@ -1,15 +1,15 @@
 import React from "react";
-import { NavLink, useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
-import { loginUser } from "../../store/session";
+// import { loginUser } from "../../store/session";
 
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
-  const dispatch = useDispatch();
-  const history = useHistory();
+  // const dispatch = useDispatch();
+  // const history = useHistory();
 
     // const demoLogin = async () => {
     //   await dispatch(loginUser("Demo", "password"));

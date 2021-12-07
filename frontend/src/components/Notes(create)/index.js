@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory, Redirect } from "react-router-dom";
+import { useHistory, Redirect, useParams } from "react-router-dom";
 import { addNote } from "../../store/notes";
 
 
@@ -10,13 +10,14 @@ const CreateNote = () => {
   const history = useHistory();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const { notebookId } = useParams();
 
   if (!sessionUser) return <Redirect to="/" />;
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const note = await dispatch(addNote(title, content));
+    const note = await dispatch(addNote(notebookId, title, content));
 
     if (note) return history.push("/notes");
   };
