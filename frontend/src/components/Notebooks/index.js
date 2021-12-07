@@ -32,6 +32,7 @@ function NotebooksList() {
             <button onClick={() => handleDelete(id)}>Delete</button>
           </NavLink>
         ))}
+        <NavLink to="/new-notebook">Add a Notebook</NavLink>
       </div>
     </>
   );
