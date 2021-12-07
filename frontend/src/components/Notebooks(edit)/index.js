@@ -24,11 +24,18 @@ const EditNotebook = () => {
     }
   };
 
+  const handleCancelClick = (e) => {
+    e.preventDefault();
+          return history.push("/notebooks");
+
+  };
+
   return (
     <>
       <h2 className="edit-notebook-header">Edit Notebook</h2>
       <form onSubmit={onSubmit} className="add-notebook-form">
-        Title: <input
+        Title:{" "}
+        <input
           onChange={updateTitle}
           name="title"
           type="text"
@@ -38,6 +45,9 @@ const EditNotebook = () => {
         />
         <button className="submit-button" type="submit">
           Edit Notebook
+        </button>
+        <button className="submit-button" type="button" onClick={handleCancelClick}>
+          Cancel
         </button>
       </form>
     </>
