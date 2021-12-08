@@ -15,7 +15,7 @@ const CreateNote = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [showNotebooks, setShowNotebooks] = useState("");
-  const { notebookId } = useParams();
+  // const { notebookId } = useParams();
 
   const updateNotebook = (e) => setShowNotebooks(e.target.value);
 

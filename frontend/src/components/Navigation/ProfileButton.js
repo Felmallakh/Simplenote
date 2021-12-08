@@ -41,7 +41,7 @@ function ProfileButton({ user }) {
       <i id="profile-icon" onClick={openMenu} class="fas fa-user-circle"></i>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>{user.username}</li>
+          <li>Welcome, {user.username}</li>
           <li>{user.email}</li>
           <li>
             <button className="submit-button" onClick={logout}>
