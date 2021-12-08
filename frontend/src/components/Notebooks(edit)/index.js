@@ -14,8 +14,8 @@ const EditNotebook = () => {
   const history = useHistory();
 
   useEffect(() => {
-      setTitle(notebook.title);
-  }, [dispatch,notebook.title]);
+    setTitle(notebook.title);
+  }, [notebook]);
 
   const updateTitle = (e) => setTitle(e.target.value)
 
