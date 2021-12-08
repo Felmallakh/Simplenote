@@ -6,21 +6,20 @@ ul {
   border-radius: 10px;
 }
 
-
 #profile-icon {
-    font-size: 30px;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
+  font-size: 30px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .profile-dropdown {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.profile-dropdown li{
+.profile-dropdown li {
   text-align: right;
 }
 
@@ -29,7 +28,7 @@ ul {
   color: #f3bda1;
   padding: 8px;
   margin: 5px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .nav-link:hover {
@@ -37,13 +36,13 @@ ul {
   border-radius: 5px;
 }
 
-.submit-button{
+.submit-button {
   color: #35444b;
   background-color: #bb8c75;
   align-items: left;
   font-size: 14px;
   font-weight: 700;
-  margin-top:10px;
+  margin-top: 10px;
   height: 2.25em;
   width: 12%;
   width: fit-content;
@@ -51,12 +50,10 @@ ul {
 }
 
 .submit-button:hover {
-    box-shadow: 0 0 2pt 2pt #687980;
-    border-radius: 5px;
+  box-shadow: 0 0 2pt 2pt #687980;
+  border-radius: 5px;
 }
 
 li {
   color: #bb8c80;
 }
-
-

@@ -37,7 +37,7 @@ const EditNotebook = () => {
   };
 
   return (
-    <>
+    <div>
       <h2 className="notebook_title">Edit Notebook</h2>
       <div className="notebook-container">
         <br />
@@ -69,7 +69,7 @@ const EditNotebook = () => {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

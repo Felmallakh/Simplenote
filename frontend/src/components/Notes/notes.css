@@ -1,6 +1,6 @@
-.notes_title{
+/* .notes_title{
     display: flex;
-    /* flex-direction: row; */
+    flex-direction: row;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(58, 24, 50);
@@ -43,10 +43,26 @@
     margin: 5px;
 }
 
-.content {
+.description {
     font-size: 16px;
 }
 
+.hook-size{
+    margin: 5px;
+    margin-bottom: 0px;
+    font-size: 18px;
+}
+.needle-size{
+    margin: 5px;
+    margin-bottom: 0px;
+    font-size: 18px;
+}
+.yarn{
+    margin:5px;
+    margin-bottom: 10px;
+    font-size: 18px;
+
+}
 .add-note{
     display: flex;
     align-items: center;
@@ -66,4 +82,4 @@
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 4px;
-}
+} */

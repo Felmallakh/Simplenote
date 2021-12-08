@@ -28,9 +28,9 @@ function NotesList() {
       <h2 className="notes_title">Notes</h2>
       <div className="notes-list">
         {Object.values(notes).map(({ id, title, content }) => (
-          <NavLink to={`/notes/${id}`} key={id}>
-            <div>{title}</div>
-            <div>{content}</div>
+          <NavLink className="notes-links" to={`/notes/${id}`} key={id}>
+            <div className="title">{title}</div>
+            <div className="content">{content}</div>
             <NavLink to={`/edit-note/${id}`}>
               <button className="submit-button">Edit</button>
             </NavLink>
@@ -40,7 +40,9 @@ function NotesList() {
           </NavLink>
         ))}
         <div>
-          <NavLink to="/new-note">Add a Note</NavLink>
+          <NavLink className="add-note" to="/new-note">
+            Add a Note
+          </NavLink>
         </div>
       </div>
     </>

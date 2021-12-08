@@ -1,0 +1,23 @@
+.main-container {
+  position: relative;
+}
+
+.main {
+  width: 100%;
+  height: fit-content;
+  border-radius: 15px;
+}
+
+.main-banner {
+  position: absolute;
+  z-index: 1;
+  color: rgb(13 96 92 / 93%);
+  font-family: cursive;
+  font-weight: 900;
+  font-size: 50px;
+  letter-spacing: 5px;
+  text-align: -webkit-center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

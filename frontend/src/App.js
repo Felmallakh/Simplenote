@@ -11,6 +11,8 @@ import EditNotebook from "./components/Notebooks(edit)"
 import EditNote from "./components/Notes(edit)"
 import CreateNotebook from "./components/Notebooks(create)";
 import CreateNote from "./components/Notes(create)";
+import Footer from "./components/Footer";
+import HomePage from "./components/HomePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +26,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
           <Route path="/login">
             <LoginForm />
           </Route>
