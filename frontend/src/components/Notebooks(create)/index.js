@@ -21,6 +21,12 @@ const CreateNotebook = () => {
     if (notebook) return history.push("/notebooks");
   };
 
+
+  const handleCancelClick = (e) => {
+    e.preventDefault();
+    return history.push("/notebooks");
+  };
+
   return (
     <>
       <h2 className="notebook_title"> Create Notebook </h2>
@@ -30,7 +36,8 @@ const CreateNotebook = () => {
         <div className="notebook_title">Title: </div>
         <br />
         <form className="add-form" onSubmit={onSubmit}>
-          <input className="input-form"
+          <input
+            className="input-form"
             name="title"
             placeholder="untitled notebook"
             value={title}
@@ -40,6 +47,13 @@ const CreateNotebook = () => {
           <div>
             <button className="submit-button" type="submit">
               Add Notebook
+            </button>
+            <button
+              className="submit-button"
+              type="button"
+              onClick={handleCancelClick}
+            >
+              Cancel
             </button>
           </div>
         </form>
