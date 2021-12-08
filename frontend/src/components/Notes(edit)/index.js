@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Redirect, useParams } from "react-router-dom";
 import { editNote, getNotes } from "../../store/notes";
 
+import "../Notebooks/notebooks.css";
+
 const EditNote = () => {
   const { notebookId } = useParams();
   const notes = useSelector((state) => state.notes[notebookId]);
@@ -42,40 +44,49 @@ const EditNote = () => {
     return history.push("/notes");
   };
 
-
   return (
     <>
-      <h2 className="headers">Edit Note</h2>
-      <form onSubmit={onSubmit} className="add-notebook-form">
-        Note Title :
-        <input
-          onChange={updateTitle}
-          name="content"
-          type="text"
-          placeholder="untitled note"
-          value={title}
-        />
-        <br/>
-        Content:
-        <br/>
-        <textarea
-          onChange={updateContent}
-          name="content"
-          type="text"
-          placeholder="Edit content"
-          value={content}
-        />
-        <button className="submit-button" type="submit">
-          Edit Note
-        </button>
-        <button
-          className="submit-button"
-          type="button"
-          onClick={handleCancelClick}
-        >
-          Cancel
-        </button>
-      </form>
+      <h2 className="notebook_title">Edit Note</h2>
+      <div className="notebook-container">
+        <br />
+        <br />
+        <form onSubmit={onSubmit} className="add-form">
+          <div className="notebook_title">Note Title :</div>
+          <input
+            className="input-form"
+            onChange={updateTitle}
+            name="content"
+            type="text"
+            placeholder="untitled note"
+            value={title}
+          />
+          <br />
+          <br />
+          <div className="notebook_title">Content :</div>
+
+          <textarea
+            className="input-form"
+            onChange={updateContent}
+            name="content"
+            type="text"
+            placeholder="Edit content"
+            value={content}
+          />
+          <br />
+          <div>
+            <button className="submit-button" type="submit">
+              Edit Note
+            </button>
+            <button
+              className="submit-button"
+              type="button"
+              onClick={handleCancelClick}
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
     </>
   );
 };
