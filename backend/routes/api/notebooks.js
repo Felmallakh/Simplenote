@@ -33,7 +33,7 @@ const notebookValidator = [
 router.get("/", restoreUser, asyncHandler(async (req, res, next) =>{
     const { user } = req;
     console.log("xxxxx", user)
-    const userId = user.id;
+    const userId = user.dataValues.id;
     if (user) {
         const notebooks = await Notebook.findAll({
             where: { userId },
@@ -86,9 +86,9 @@ router.put("/:id(\\d+)", restoreUser, notebookValidator, asyncHandler(async (req
 
 
 //Delete Notebook
-router.delete("/:id(\\d+)", async (req, res, next) => {
+router.delete("/:id(\\d+)", restoreUser, async (req, res, next) => {
     const { user } = req;
-    const userId = user.dataValues.id;
+    const userId = user.id;
     const notebookId = req.params.id;
 
     if (user){
