@@ -39,6 +39,7 @@
     color: bisque;
 }
 
+
 .edit-form-link {
   margin-left: 65px;
   padding: 2px;
@@ -76,4 +77,9 @@
 
 .add-notebook:hover{
     background-color:rgb(143, 106, 106)
+}
+
+
+.notebooks-buttons {
+  display: grid;
 }

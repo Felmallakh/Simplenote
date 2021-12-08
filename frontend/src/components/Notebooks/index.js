@@ -32,15 +32,19 @@ function NotebooksList() {
           {Object.values(notebooks).map(({ id, title }) => (
             <NavLink className="notebooks-links" to={`/notes/${id}`} key={id}>
               <div>{title}</div>
+              <div className="notebooks-buttons">
               <NavLink className="edit-form-link" to={`/edit-notebook/${id}`}>
                 <button className="submit-button">Edit</button>
               </NavLink>
-              <button
-                className="submit-button"
-                onClick={() => handleDelete(id)}
-              >
-                Delete
-              </button>
+              <NavLink className="edit-form-link" to={`/notebooks`}>
+                <button
+                  className="submit-button"
+                  onClick={() => handleDelete(id)}
+                >
+                  Delete
+                </button>
+              </NavLink>
+              </div>
             </NavLink>
           ))}
           <div>
