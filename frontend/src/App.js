@@ -11,7 +11,6 @@ import EditNotebook from "./components/Notebooks(edit)"
 import EditNote from "./components/Notes(edit)"
 import CreateNotebook from "./components/Notebooks(create)";
 import CreateNote from "./components/Notes(create)";
-import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
 
 function App() {
