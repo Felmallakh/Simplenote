@@ -3,8 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
 import { addNotebook } from "../../store/notebooks";
 
-import "./notebookform.css";
-
+import "../Notebooks/notebooks.css";
 
 const CreateNotebook = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -24,13 +23,27 @@ const CreateNotebook = () => {
 
   return (
     <>
-    <h2 className="headers"> Create Notebook </h2>
-    <form className="add-form" onSubmit={onSubmit}>
-        <input name="title" placeholder="untitled notebook" value={title} onChange={e => setTitle(e.target.value)} />
-      <div>
-        <button className="submit-button" type="submit">Add Notebook</button>
+      <h2 className="notebook_title"> Create Notebook </h2>
+      <div className="notebook-container">
+        <br />
+        <br />
+        <div className="notebook_title">Title: </div>
+        <br />
+        <form className="add-form" onSubmit={onSubmit}>
+          <input className="input-form"
+            name="title"
+            placeholder="untitled notebook"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <br />
+          <div>
+            <button className="submit-button" type="submit">
+              Add Notebook
+            </button>
+          </div>
+        </form>
       </div>
-    </form>
     </>
   );
 };
