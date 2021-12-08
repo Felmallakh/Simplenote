@@ -39,6 +39,30 @@
     color: bisque;
 }
 
+.edit-form-link {
+  margin-left: 65px;
+  padding: 2px;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 4px;
+}
+
+.submit-button {
+    color: #35444b;
+    background-color: #bb8c75;
+    font-size: 14px;
+    width: fit-content;
+    box-shadow: 0 0 2px #687980;
+    border-radius: 10px;
+}
+.submit-button:hover {
+    background-color:#3f5f6d;
+    color: #bb8c75;
+}
+
 .add-notebook {
   display: flex;
   align-items: center;
@@ -52,38 +76,4 @@
 
 .add-notebook:hover{
     background-color:rgb(143, 106, 106)
-}
-
-.edit-form-link {
-  margin-left: 65px;
-  padding: 2px;
-  border-radius: 5px;
-  font-size: 14px;
-  padding: 3px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 4px;
-}
-
-.delete-button {
-  background-color: thistle;
-}
-
-.delete-button:hover {
-  background-color: rgb(235, 215, 235);
-}
-
-
-.submit-button {
-    color: #35444b;
-    background-color: #bb8c75;
-    font-size: 14px;
-    width: fit-content;
-    box-shadow: 0 0 2px #687980;
-    border-radius: 10px;
-}
-
-.submit-button:hover {
-    background-color:#3f5f6d;
-    color: #bb8c75;
 }
