@@ -33,7 +33,7 @@ const CreateNotebook = () => {
       <div className="notebook-container">
         <br />
         <br />
-        <div className="notebook_title">Title: </div>
+        <div className="notebook_title">Title </div>
         <br />
         <form className="add-form" onSubmit={onSubmit}>
           <input
@@ -42,6 +42,7 @@ const CreateNotebook = () => {
             placeholder="untitled notebook"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            required
           />
           <br />
           <div>
