@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
 import { getNotes, deleteNote } from "../../store/notes";
 
+import "./notes.css";
+
 function NotesList() {
   const notes = useSelector((state) => state.notes);
   const dispatch = useDispatch();

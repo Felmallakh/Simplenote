@@ -1,0 +1,32 @@
+.note-submit-button{
+    margin: 10px;
+}
+
+.title-input{
+    margin-top: 5px;
+}
+
+.notebook-categories{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.hook{
+    margin-top: 5px;
+
+}
+
+.needle{
+    margin-top: 5px;
+}
+
+.yarn-input{
+    margin-top: 5px;
+}
+.description-input{
+    min-width: 500px;
+    min-height: 200px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 5px;
+}

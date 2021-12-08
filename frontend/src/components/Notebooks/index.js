@@ -4,6 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
 import { getAllNotebook, deleteNotebook } from "../../store/notebooks";
 
+import "./notebooks.css";
+
+
 function NotebooksList() {
   const notebooks = useSelector((state) => state.notebooks);
   const dispatch = useDispatch();
@@ -24,24 +27,27 @@ function NotebooksList() {
   return (
     <>
       <h2 className="notebook_title">Notebooks</h2>
-      <div className="notebook-list">
-        {Object.values(notebooks).map(({ id, title }) => (
-          <NavLink to={`/notebooks/${id}`} key={id}>
-           <div>{title}</div>
-            {/* <div>
-              <NavLink to={`/notes/${id}`}>{title}</NavLink>
-            </div> */}
-
-            <NavLink to={`/edit-notebook/${id}`}>
-              <button className="submit-button">Edit</button>
+      <div className="notebook-container">
+        <div className="notebook-list">
+          {Object.values(notebooks).map(({ id, title }) => (
+            <NavLink className="notebooks-links" to={`/notes/${id}`} key={id}>
+              <div>{title}</div>
+              <NavLink className="edit-form-link" to={`/edit-notebook/${id}`}>
+                <button className="submit-button">Edit</button>
+              </NavLink>
+              <button
+                className="submit-button"
+                onClick={() => handleDelete(id)}
+              >
+                Delete
+              </button>
             </NavLink>
-            <button className="submit-button" onClick={() => handleDelete(id)}>
-              Delete
-            </button>
-          </NavLink>
-        ))}
-        <div>
-          <NavLink to="/new-notebook">Add Notebook</NavLink>
+          ))}
+          <div>
+            <NavLink className="add-notebook" to="/new-notebook">
+              Add Notebook
+            </NavLink>
+          </div>
         </div>
       </div>
     </>
@@ -49,3 +55,4 @@ function NotebooksList() {
 }
 
 export default NotebooksList;
+

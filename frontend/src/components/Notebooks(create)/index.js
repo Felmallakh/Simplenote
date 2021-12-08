@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
 import { addNotebook } from "../../store/notebooks";
 
+import "./notebookform.css";
+
+
 const CreateNotebook = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
