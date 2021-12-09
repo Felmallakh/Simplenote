@@ -50,8 +50,8 @@ const EditNote = () => {
       <div className="notebook-container">
         <br />
         <br />
-        <form onSubmit={onSubmit} className="add-form">
-          <div className="notebook_title">Note Title :</div>
+        <form className="add-form" onSubmit={onSubmit}>
+          <div className="notebook_content">Note Title :</div>
           <input
             className="input-form"
             onChange={updateTitle}
@@ -59,10 +59,11 @@ const EditNote = () => {
             type="text"
             placeholder="untitled note"
             value={title}
+            required
           />
           <br />
           <br />
-          <div className="notebook_title">Content :</div>
+          <div className="notebook_content">Content :</div>
 
           <textarea
             className="text-form"

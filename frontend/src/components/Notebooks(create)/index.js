@@ -33,7 +33,7 @@ const CreateNotebook = () => {
       <div className="notebook-container">
         <br />
         <br />
-        <div className="notebook_title">Title </div>
+        <div className="notebook_content">Title </div>
         <br />
         <form className="add-form" onSubmit={onSubmit}>
           <input
@@ -45,7 +45,7 @@ const CreateNotebook = () => {
             required
           />
           <br />
-          <div>
+          <div className="notebook-buttons">
             <button className="submit-button" type="submit">
               Add Notebook
             </button>

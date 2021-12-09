@@ -42,8 +42,8 @@ const EditNotebook = () => {
       <div className="notebook-container">
         <br />
         <br />
-        <form onSubmit={onSubmit} className="add-form">
-          <div className="notebook_title">Title</div>
+        <form className="add-form" onSubmit={onSubmit}>
+          <div className="notebook_content">Title</div>
           <br />
           <input
             className="input-form"

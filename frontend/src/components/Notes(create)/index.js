@@ -4,7 +4,7 @@ import { useHistory, Redirect, useParams } from "react-router-dom";
 import { addNote } from "../../store/notes";
 import { getAllNotebook } from "../../store/notebooks";
 
-import "../Notebooks/notebooks.css"
+import "../Notebooks/notebooks.css";
 
 const CreateNote = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -43,47 +43,55 @@ const CreateNote = () => {
   return (
     <>
       <h2 className="notebook_title"> Create Note </h2>
-      <form className="notebook-container" onSubmit={onSubmit}>
-        <div className="notebooks-links">
-          Title:
-          <input
-            className="title-input"
-            name="title"
-            placeholder="untitled note"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
-          <br />
-          <br />
-          <br />
-          Notebook:
-          <select
-            className="notebook-categories"
-            onChange={updateNotebook}
-            value={showNotebooks}
-          >
-            {notebooks.map((notebook) => (
-              <option key={notebook.id} value={notebook.id}>
-                {notebook.title}
-              </option>
-            ))}
-          </select>
-          Content:{" "}
+      <div className="notebook-container">
+        <br />
+        <br />
+        <form className="add-form" onSubmit={onSubmit}>
+          <div className="titles">
+            <div className="notes-links">
+              Title:
+              <input
+                className="input-form"
+                name="title"
+                placeholder="untitled note"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                required
+              />
+              Notebook:
+              <select
+                className="notebook-categories"
+                onChange={updateNotebook}
+                value={showNotebooks}
+              >
+                {notebooks.map((notebook) => (
+                  <option key={notebook.id} value={notebook.id}>
+                    {notebook.title}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <br />
+            <br />
+          </div>
+          <div className="notebook_content">Content :</div>
           <textarea
-            className="description-input"
+            className="text-form"
             name="content"
+            type="text"
             placeholder="Note content goes here"
             value={content}
             onChange={(e) => setContent(e.target.value)}
+            maxlength="100"
+            required
           />
-        </div>
-        <div>
-          <button className="submit-button" type="submit">
-            Add Notebook
-          </button>
-        </div>
-      </form>
+          <div>
+            <button className="submit-button" type="submit">
+              Add Notebook
+            </button>
+          </div>
+        </form>
+      </div>
     </>
   );
 };
