@@ -95,7 +95,7 @@ router.put(
 );
 
 //Delete Note
-router.delete("/:id(\\d+)", async (req, res, next) => {
+router.delete("/:id(\\d+)",restoreUser, async (req, res, next) => {
   const { user } = req;
   const noteId = req.params.id;
 
