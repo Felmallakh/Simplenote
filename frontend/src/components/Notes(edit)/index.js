@@ -65,17 +65,19 @@ const EditNote = () => {
           <div className="notebook_title">Content :</div>
 
           <textarea
-            className="input-form"
+            className="text-form"
             onChange={updateContent}
             name="content"
             type="text"
             placeholder="Edit content"
             value={content}
+            maxlength="100"
+            required
           />
           <br />
-          <div>
+          <div className="note-buttons">
             <button className="submit-button" type="submit">
-              Edit Note
+              Save Note <i className="far fa-save" />
             </button>
             <button
               className="submit-button"

@@ -55,17 +55,17 @@ const EditNotebook = () => {
             required
           />
           <br />
-          <div>
-          <button className="submit-button" type="submit">
-            Edit Notebook
-          </button>
-          <button
-            className="submit-button"
-            type="button"
-            onClick={handleCancelClick}
-          >
-            Cancel
-          </button>
+          <div className="notebook-buttons">
+            <button className="submit-button" type="submit">
+              Edit Notebook
+            </button>
+            <button
+              className="submit-button"
+              type="button"
+              onClick={handleCancelClick}
+            >
+              Cancel
+            </button>
           </div>
         </form>
       </div>
