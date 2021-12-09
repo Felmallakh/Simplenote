@@ -20,7 +20,7 @@ function NotesList() {
 
   const sessionUser = useSelector((state) => state.session.user);
   if (!sessionUser) {
-    return <Redirect to="/" />;
+    return <Redirect to="/"/>;
   }
 
   return (
@@ -30,7 +30,7 @@ function NotesList() {
       <div className="notebook-list">
         {Object.values(notes).map(({ id, title, content }) => (
           <NavLink className="notebooks-links" to={`/notes/${id}`} key={id}>
-            {/* <div className="title">{title}</div> */}
+            <div className="title">{title}</div>
             <div className="content">{content}</div>
               <div className="notebooks-buttons">
 
@@ -38,7 +38,6 @@ function NotesList() {
               <button className="submit-button">Edit</button>
             </NavLink>
               <NavLink className="edit-form-link" to={`/notes`}>
-
             <button className="submit-button" onClick={() => handleDelete(id)}>
               Delete
             </button>
