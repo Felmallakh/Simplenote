@@ -51,7 +51,7 @@ const EditNote = () => {
         <br />
         <br />
         <form className="add-form" onSubmit={onSubmit}>
-          <div className="notebook_content">Note Title :</div>
+          <div className="notebook_content">Note Title</div>
           <input
             className="input-form"
             onChange={updateTitle}
@@ -63,7 +63,7 @@ const EditNote = () => {
           />
           <br />
           <br />
-          <div className="notebook_content">Content :</div>
+          <div className="notebook_content">Content</div>
 
           <textarea
             className="text-form"

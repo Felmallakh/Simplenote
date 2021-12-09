@@ -55,7 +55,7 @@ const CreateNote = () => {
         <form className="add-form" onSubmit={onSubmit}>
           <div className="titles">
             <div className="notebook_content">
-              Title:
+              Title
               <input
                 className="input-form"
                 name="title"
@@ -64,7 +64,7 @@ const CreateNote = () => {
                 onChange={(e) => setTitle(e.target.value)}
                 required
               />
-              {""} Notebook:
+              {""} Notebook 
               <select
                 className="dropdown"
                 onChange={updateNotebook}
@@ -80,7 +80,7 @@ const CreateNote = () => {
             <br />
             <br />
           </div>
-          <div className="notebook_content">Content :</div>
+          <div className="notebook_content">Content </div>
           <textarea
             className="text-form"
             name="content"
@@ -93,7 +93,7 @@ const CreateNote = () => {
           />
           <div className="notebook-buttons">
             <button className="submit-button" type="submit">
-              Add Notebook <i className="fas fa-plus-circle" />
+              Add Note <i className="fas fa-plus-circle" />
             </button>
             <button
               className="submit-button"

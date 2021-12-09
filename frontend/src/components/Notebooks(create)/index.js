@@ -47,7 +47,7 @@ const CreateNotebook = () => {
           <br />
           <div className="notebook-buttons">
             <button className="submit-button" type="submit">
-              Add Notebook
+              Add Notebook <i className="fas fa-plus-circle" />
             </button>
             <button
               className="submit-button"
