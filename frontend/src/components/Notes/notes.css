@@ -17,6 +17,7 @@
 
 .notes-contents {
   font-size: 17px;
+  cursor: context-menu
 }
 
 .notes-container {
@@ -46,6 +47,7 @@
   align-items: center;
   justify-content: space-between;
   width: 22em;
+  cursor: context-menu;
   background-color: rgb(2, 71, 94, 0.65);
   border-radius: 5px;
   padding: 5px;
