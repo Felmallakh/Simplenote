@@ -54,7 +54,7 @@ const CreateNote = () => {
         <br />
         <form className="add-form" onSubmit={onSubmit}>
           <div className="titles">
-            <div className="notebook_content">
+            <div className="note-content">
               Title
               <input
                 className="input-form"
@@ -64,7 +64,7 @@ const CreateNote = () => {
                 onChange={(e) => setTitle(e.target.value)}
                 required
               />
-              {""} Notebook 
+              {""} Notebook
               <select
                 className="dropdown"
                 onChange={updateNotebook}
