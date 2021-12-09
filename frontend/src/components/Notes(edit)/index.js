@@ -76,7 +76,7 @@ const EditNote = () => {
             required
           />
           <br />
-          <div className="note-buttons">
+          <div className="notebook-buttons">
             <button className="submit-button" type="submit">
               Save Note <i className="far fa-save" />
             </button>
