@@ -7,7 +7,6 @@ import { getAllNotebook } from "../../store/notebooks";
 // import "../Notebooks/notebooks.css";
 import "../Notes/notes.css";
 
-
 const CreateNote = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const notebooks = useSelector((state) => Object.values(state.notebooks));
@@ -42,6 +41,11 @@ const CreateNote = () => {
     if (note) return history.push("/notes");
   };
 
+  const handleCancelClick = (e) => {
+    e.preventDefault();
+    return history.push("/notes");
+  };
+
   return (
     <>
       <h2 className="notes_title"> Create Note </h2>
@@ -60,14 +64,14 @@ const CreateNote = () => {
                 onChange={(e) => setTitle(e.target.value)}
                 required
               />
-              Notebook:
+              {""} Notebook:
               <select
-                className="notebook-categories"
+                className="dropdown"
                 onChange={updateNotebook}
                 value={showNotebooks}
               >
                 {notebooks.map((notebook) => (
-                  <option key={notebook.id} value={notebook.id}>
+                  <option className="dropdown-content" key={notebook.id} value={notebook.id}>
                     {notebook.title}
                   </option>
                 ))}
@@ -87,9 +91,16 @@ const CreateNote = () => {
             maxlength="100"
             required
           />
-          <div>
+          <div className="notebook-buttons">
             <button className="submit-button" type="submit">
-              Add Notebook
+              Add Notebook <i className="fas fa-plus-circle" />
+            </button>
+            <button
+              className="submit-button"
+              type="button"
+              onClick={handleCancelClick}
+            >
+              Cancel
             </button>
           </div>
         </form>

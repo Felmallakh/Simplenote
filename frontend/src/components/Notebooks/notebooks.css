@@ -46,8 +46,6 @@
   color: bisque;
 }
 
-
-
 /* .content {
   font-size: 20px;
   align-items: center;
@@ -63,7 +61,6 @@
   padding-right: 10px;
   padding-bottom: 4px;
 }
-
 
 .submit-button {
   color: #35444b;
@@ -101,7 +98,7 @@
 .input-form {
   height: 30px;
   width: fit-content;
-  font-size: 20px;
+  font-size: 18px;
   font-family: monospace;
   border: groove;
   border-radius: 10px;
@@ -112,6 +109,7 @@
 
 .text-form {
   font-family: monospace;
+  font-size: 18px;
   height: 200px;
   width: 550px;
   border: groove;
@@ -125,4 +123,17 @@
   display: flex;
   justify-content: center;
   gap: 30px;
+}
+
+.dropdown {
+  font-size: 18px;
+  font-family: monospace;
+  border: groove;
+  border-radius: 10px;
+  border-width: thick;
+  padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
