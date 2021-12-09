@@ -86,23 +86,25 @@ const initialState = {};
 
 const noteReducer = (state = initialState, action) => {
   switch (action.type) {
-
     case GET_NOTES:
-        const notes = {};
-        action.payload.forEach(note => notes[note.id] = note)
-        return { ...state, ...notes };
+      const notes = {};
+      action.payload.forEach((note) => (notes[note.id] = note));
+      return { ...state, ...notes };
 
     case ADD_NOTE:
-        return { ...state, [action.payload.id]: action.payload };
+      return { ...state, [action.payload.id]: action.payload };
 
     case UPDATE_NOTE:
-        return { ...state, [action.payload.id]: action.payload };
+      return { ...state, [action.payload.id]: action.payload };
 
     case REMOVE_NOTE:
-        return { ...state, [action.payload.id]: action.payload };
+      const newState = { ...state };
+      delete newState[action.payload];
+      return newState;
+    // return { ...state, [action.payload.id]: action.payload };
 
     default:
-        return state;
+      return state;
   }
 };
 
