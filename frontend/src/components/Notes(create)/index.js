@@ -4,7 +4,9 @@ import { useHistory, Redirect, useParams } from "react-router-dom";
 import { addNote } from "../../store/notes";
 import { getAllNotebook } from "../../store/notebooks";
 
-import "../Notebooks/notebooks.css";
+// import "../Notebooks/notebooks.css";
+import "../Notes/notes.css";
+
 
 const CreateNote = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -42,13 +44,13 @@ const CreateNote = () => {
 
   return (
     <>
-      <h2 className="notebook_title"> Create Note </h2>
-      <div className="notebook-container">
+      <h2 className="notes_title"> Create Note </h2>
+      <div className="notes-container">
         <br />
         <br />
         <form className="add-form" onSubmit={onSubmit}>
           <div className="titles">
-            <div className="notes-links">
+            <div className="notebook_content">
               Title:
               <input
                 className="input-form"
