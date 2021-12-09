@@ -15,6 +15,10 @@
   gap: 7px;
 }
 
+.content {
+  font-size: 17px;
+}
+
 .notes-container {
   text-align: -webkit-center;
   display: flex;
