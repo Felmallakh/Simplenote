@@ -33,7 +33,7 @@ function NotesList() {
             <NavLink className="notes-links" to={`/notes/${id}`} key={id}>
               {/* <div className="notes-contents"> */}
               <div className="title">{title}</div>
-              <div className="content">{content}</div>
+              <div className="notes-contents">{content}</div>
               {/* </div> */}
               <div className="note-buttons">
                 <NavLink className="edit-form-link" to={`/edit-note/${id}`}>
