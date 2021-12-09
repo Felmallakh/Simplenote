@@ -72,7 +72,7 @@ const EditNote = () => {
             type="text"
             placeholder="Edit content"
             value={content}
-            maxlength="100"
+            maxlength="255"
             required
           />
           <br />
