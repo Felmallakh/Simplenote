@@ -57,7 +57,7 @@ const EditNotebook = () => {
           <br />
           <div className="notebook-buttons">
             <button className="submit-button" type="submit">
-              Edit Notebook
+              Save Notebook <i className="far fa-save" />
             </button>
             <button
               className="submit-button"
