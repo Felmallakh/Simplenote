@@ -17,7 +17,9 @@
 
 .notes-contents {
   font-size: 17px;
-  cursor: context-menu
+  cursor: context-menu;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .notes-container {
@@ -83,15 +85,13 @@
 .dropdown {
   /* width: fit-content; */
   outline: 0;
-
 }
-.dropdown-content{
+.dropdown-content {
   font-size: 16px;
-
 }
 
 select {
-        width: 100%;
-        height: 100%;
-        cursor:pointer;
-    }
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
