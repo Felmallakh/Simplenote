@@ -35,13 +35,13 @@ const EditNote = () => {
     const note = await dispatch(editNote(notebookId, title, content));
 
     if (note) {
-      return history.push("/notes");
+      return history.push(`/notebook/${notebookId}/notes`);
     }
   };
 
   const handleCancelClick = (e) => {
     e.preventDefault();
-    return history.push("/notes");
+    return history.push(`/notebook/${notebookId}/notes`);
   };
 
   return (

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory, Redirect } from "react-router-dom";
+import { useHistory, Redirect, useParams } from "react-router-dom";
 import { addNote } from "../../store/notes";
 import { getAllNotebook } from "../../store/notebooks";
 
@@ -16,9 +16,11 @@ const CreateNote = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [showNotebooks, setShowNotebooks] = useState("");
-  // const { notebookId } = useParams();
+  const notebookId  = useParams();
+  console.log("asdasdasd", notebookId)
 
   const updateNotebook = (e) => setShowNotebooks(e.target.value);
+  // const notebookId = useParams();
 
   useEffect(() => {
     dispatch(getAllNotebook());
@@ -38,7 +40,7 @@ const CreateNote = () => {
 
     const note = await dispatch(addNote(showNotebooks, title, content));
 
-    if (note) return history.push("/notes");
+    if (note) return history.push(`/notebooks/${notebookId}/`);
   };
 
   const handleCancelClick = (e) => {

@@ -18,7 +18,7 @@ const CreateNotebook = () => {
 
     const notebook = await dispatch(addNotebook(title));
 
-    if (notebook) return history.push("/notebooks");
+    if (notebook) return history.push(`/notebooks`);
   };
 
 

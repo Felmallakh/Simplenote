@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
 import { getNotes, deleteNote } from "../../store/notes";
@@ -10,10 +10,15 @@ import "./notes.css";
 function NotesList() {
   const notes = useSelector((state) => state.notes);
   const dispatch = useDispatch();
+  const [isLoaded, setisLoaded] = useState(false);
 
   useEffect(() => {
-    dispatch(getNotes());
+    dispatch(getNotes(notes)).then(() => {
+        setisLoaded(true);
+      })
   }, [dispatch]);
+
+
 
   const handleDelete = (id) => {
     dispatch(deleteNote(id));
@@ -29,7 +34,7 @@ function NotesList() {
       <h2 className="notes_title">Notes</h2>
       <div className="notes-container">
         <div className="notes-list">
-          {Object.values(notes).map(({ id, title, content }) => (
+          {notes && Object.values(notes).map(({ id, title, content }) => (
             <NavLink className="notes-links" to={`/notes/${id}`} key={id}>
               {/* <div className="notes-contents"> */}
               <div className="title">{title}</div>

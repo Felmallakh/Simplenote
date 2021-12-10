@@ -9,6 +9,7 @@ import "./notebooks.css";
 
 function NotebooksList() {
   const notebooks = useSelector((state) => state.notebooks);
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,8 +30,8 @@ function NotebooksList() {
       <h2 className="notebook_title">Notebooks</h2>
       <div className="notebook-container">
         <div className="notebook-list">
-          {Object.values(notebooks).map(({ id, title }) => (
-            <NavLink className="notebooks-links" to={`/notes/${id}`} key={id}>
+          {notebooks && Object.values(notebooks).map(({ id, title }) => (
+            <NavLink className="notebooks-links" to={`/notebook/${id}/notes`} key={id}>
               <div className="title">{title}</div>
               <div className="notebooks-buttons">
               <NavLink className="edit-form-link" to={`/edit-notebook/${id}`}>

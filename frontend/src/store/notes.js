@@ -4,6 +4,7 @@ const GET_NOTES = "note/getNotes";
 const ADD_NOTE = "note/addNote";
 const UPDATE_NOTE = "note/editNote";
 const REMOVE_NOTE = "note/removeNote";
+const GET_NOTEBOOKNOTES = "/note/notebooksNotes";
 
 //GET Note
 const get = (payload) => {
@@ -35,6 +36,20 @@ const remove = (payload) => {
     type: REMOVE_NOTE,
     payload,
   };
+};
+
+const getNotebookNotes = (payload) => {
+  return { type: GET_NOTEBOOKNOTES, payload };
+};
+
+export const getNotebooksNotes = (notebookId) => async (dispatch) => {
+  // console.log("xxxnotebook", notebookId)
+  const res = await csrfFetch(`/api/notes/notebooks/${notebookId.notebookId}`);
+
+  if (res.ok) {
+    const data = await res.json();
+    dispatch(getNotebookNotes(data));
+  }
 };
 
 //Get Notes
@@ -102,6 +117,10 @@ const noteReducer = (state = initialState, action) => {
       delete newState[action.payload];
       return newState;
     // return { ...state, [action.payload.id]: action.payload };
+
+    case GET_NOTEBOOKNOTES:
+      console.log("xxxxxxxxxxxxxx", action.payload)
+      return { ...state, notesbookNotes: action.payload};
 
     default:
       return state;
