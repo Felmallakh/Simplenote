@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory, Redirect, useParams } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import { addNote } from "../../store/notes";
 import { getAllNotebook } from "../../store/notebooks";
 
