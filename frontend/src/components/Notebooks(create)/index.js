@@ -46,15 +46,15 @@ const CreateNotebook = () => {
           />
           <br />
           <div className="notebook-buttons">
-            <button className="submit-button" type="submit">
-              Add Notebook <i className="fas fa-plus-circle" />
-            </button>
             <button
               className="submit-button"
               type="button"
               onClick={handleCancelClick}
             >
-              Cancel
+              <i className="fas fa-arrow-left" /> Notebooks
+            </button>
+            <button className="submit-button" type="submit">
+              Add Notebook <i className="fas fa-plus-circle" />
             </button>
           </div>
         </form>
