@@ -138,3 +138,14 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+a.add-notebook {
+  gap: 5px;
+  text-align: center;
+  justify-content: center;
+}
+
+.date {
+  margin-right: auto;
+  font-size: 10px;
+}
