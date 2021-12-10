@@ -29,31 +29,39 @@ function NotesList() {
       <h2 className="notes_title">Notes</h2>
       <div className="notes-container">
         <div className="notes-list">
-          {Object.values(notes).map(({ id, title, content }) => (
-            <NavLink className="notes-links" to={`/notes/${id}`} key={id}>
-              {/* <div className="notes-contents"> */}
-              <div className="title">{title}</div>
-              <div className="notes-contents">{content}</div>
-              {/* </div> */}
-              <div className="note-buttons">
-                <NavLink className="edit-form-link" to={`/edit-note/${id}`}>
-                  <div>
-                    <button className="submit-button">Edit</button>
-                  </div>
-                </NavLink>
-                <NavLink className="edit-form-link" to={`/notes`}>
-                  <div>
-                    <button
-                      className="submit-button"
-                      onClick={() => handleDelete(id)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </NavLink>
-              </div>
-            </NavLink>
-          ))}
+          {Object.values(notes).map(({ id, title, content, createdAt }) => {
+            const date = new Date(createdAt)
+              .toLocaleString()
+              .replace("-", ".")
+              .split("T")[0]
+              .replace("-", ".");
+            return (
+              <NavLink className="notes-links" to={`/notes/${id}`} key={id}>
+                {/* <div className="notes-contents"> */}
+                <div className="title">{title}</div>
+                <div className="notes-contents">{content}</div>
+                {/* </div> */}
+                <div className="note-buttons">
+                  <NavLink className="edit-form-link" to={`/edit-note/${id}`}>
+                    <div>
+                      <button className="submit-button">Edit</button>
+                    </div>
+                  </NavLink>
+                  <NavLink className="edit-form-link" to={`/notes`}>
+                    <div>
+                      <button
+                        className="submit-button"
+                        onClick={() => handleDelete(id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </NavLink>
+                </div>
+                <div className="date">Created at {date}</div>
+              </NavLink>
+            );
+          })}
           <div>
             <NavLink className="add-notebook" to="/new-note">
               Add a Note

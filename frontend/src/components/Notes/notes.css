@@ -95,3 +95,8 @@ select {
   height: 100%;
   cursor: pointer;
 }
+
+.date {
+  margin-right: auto;
+  font-size: 10px;
+}
