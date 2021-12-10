@@ -88,7 +88,7 @@ const CreateNote = () => {
             placeholder="Note content goes here"
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            maxlength="100"
+            maxlength="255"
             required
           />
           <div className="notebook-buttons">
