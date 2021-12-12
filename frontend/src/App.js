@@ -28,9 +28,9 @@ function App() {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route path="/login">
+          {/* <Route path="/login">
             <LoginForm />
-          </Route>
+          </Route> */}
           <Route path="/signup">
             <SignupForm />
           </Route>
