@@ -56,8 +56,9 @@ form.comment {
   div#root {
     width: 100vw;
     height: 100vh;
-    background-color: snow;
+    background-color:cadetblue
   }
+
   main {
     grid-template-columns: 100%;
     width: 100%;
